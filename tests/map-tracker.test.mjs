@@ -2,7 +2,7 @@ import test from 'node:test';import assert from 'node:assert/strict';import vm f
 const sandbox={module:{exports:{}},require:()=>({Plugin:class{},MarkdownRenderChild:class{},Notice:class{}})};vm.runInNewContext(fs.readFileSync(new URL('../assets/obsidian/brancha-interactive/main.js',import.meta.url),'utf8'),sandbox);const x=sandbox.module.exports.explorer,plain=v=>JSON.parse(JSON.stringify(v));
 const node=(id,status='active')=>({id,title:id,type:'task',statusId:status,status});
 test('long filenames fit bounded text lines, retain full title, and support unbroken Unicode names',()=>{
- for(const title of ['AUMEL01_Switch_Implementation_Field_Workbook_v1_(1).xlsx','x'.repeat(180),'測'.repeat(90)]){const box=x.box({title,status:'Active'});assert.equal(box.title,title);assert(box.lines.length<=4);assert(box.lines.every(line=>line.length<=31));assert(box.height>=66);}
+ for(const title of ['Example_Project_Implementation_Field_Workbook_v1_(1).xlsx','x'.repeat(180),'測'.repeat(90)]){const box=x.box({title,status:'Active'});assert.equal(box.title,title);assert(box.lines.length<=4);assert(box.lines.every(line=>line.length<=31));assert(box.height>=66);}
 });
 test('32-record fanout previews six and reveals every retained record through bounded branch pages',()=>{
  const model={title:'Evidence',nodes:Array.from({length:32},(_,i)=>node('doc'+i)),groups:[{id:'evidence',title:'Evidence and reports',nodeIds:Array.from({length:32},(_,i)=>'doc'+i)}],edges:[]},before=JSON.stringify(model),expanded=new Set(['evidence']);
