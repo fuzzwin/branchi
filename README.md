@@ -49,6 +49,14 @@ are preserved. A plugin or Site cannot passively read every conversation.
 · [ChatGPT](cloud/README.md) · [Two setups, first use and sync plan](docs/two-setups-and-sync.md)
 · [What is what?](docs/two-setups-and-sync.md#what-is-what)
 
+## From capture to verified progress
+
+A saved completion report is the starting point for review. Follow the
+[visual evidence-loop guide](docs/evidence-flow.md) from an included chat through
+source-linked proposals, actual checks and accepted project evidence. It includes
+a fictional worked example, the Desktop/hosted boundary, and a checklist for
+distinguishing installed integrations from verified runtime delivery.
+
 ## Version 0.22: maps that fit the work
 
 Project maps adapt to their visible content, with a dedicated map area, a
